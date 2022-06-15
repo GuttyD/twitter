@@ -9,41 +9,57 @@ const Posts = [
   {
       id: 1,
       title: 'Post 1',
-      body: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+      accountName: 'John Doe',
+      accountUser: '@johndoe', 
+      body: 'Lorem ipsum dolor sit amet, consectetur adipiscing elita.',
   },
   {
       id: 2,
       title: 'Post 2',
+      accountName: 'John Doe',
+      accountUser: '@johndoe', 
       body: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
   },
   {
       id: 3,
       title: 'Post 3',
+      accountName: 'John Doe',
+      accountUser: '@johndoe', 
       body: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
   },
   {
       id: 4,
       title: 'Post 4',
+      accountName: 'John Doe',
+      accountUser: '@johndoe', 
       body: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
   },
   {
       id: 5,
       title: 'Post 5',
+      accountName: 'John Doe',
+      accountUser: '@johndoe', 
       body: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
   },
   {
       id: 6,
       title: 'Post 6',
+      accountName: 'John Doe',
+      accountUser: '@johndoe', 
       body: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
   },
   {
       id: 7,
       title: 'Post 7',
+      accountName: 'John Doe',
+      accountUser: '@johndoe', 
       body: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
   },
   {
       id: 8,
       title: 'Post 8',
+      accountName: 'John Doe',
+      accountUser: '@johndoe', 
       body: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
   },
   ]
@@ -71,25 +87,27 @@ export function Home() {
             keyExtractor={item => item.id.toString()}
             renderItem={({ item }) => 
             <SafeAreaView style={styles.postContainer}>
-              
               <View style={styles.icon}>
                 <Ionicons name="person-circle-outline" size={50} color="gray"/>
               </View>
-                
-                <View style={{flexDirection: 'column', justifyContent:'space-around'}}>
-                  <Text style={styles.body}>{item.body}</Text>
-                
+
+                <View style={{flexDirection: 'column', flexGrow: 1, flex: 1}}>
+                  <View style={{flexDirection: 'row', width: '40%', height: 25}}>
+                  <Text style={styles.name}>{item.accountName}</Text>
+                  <Text style={styles.user}>{item.accountUser}</Text>
+                  </View>
+                <Text style={styles.body}>{item.body}</Text>
                 <View style={styles.inter}>
                   
-                 <TouchableOpacity style={styles.comment}>
+                 <TouchableOpacity>
                     <Ionicons name="chatbubble-outline" size={20} color="gray" />
                   </TouchableOpacity>
                   
-                  <TouchableOpacity style={styles.retweet}>
+                  <TouchableOpacity>
                     <AntDesign name="retweet" size={20} color="gray" />
                   </TouchableOpacity>
                   
-                  <TouchableOpacity style={styles.like}>
+                  <TouchableOpacity>
                     < AntDesign name="hearto" size={20} color="gray"/>
                   </TouchableOpacity>
 
@@ -109,56 +127,59 @@ export function Home() {
 
 const styles = StyleSheet.create({
     home: {
-        backgroundColor: 'blue',
-        flexDirection: 'column',
+      backgroundColor: '#474747',  
+      flexDirection: 'column',
     },
     header: {
         backgroundColor: 'black',
         width: '100%',
-        height: 60,
+        height: '8%',
         justifyContent: 'space-between',
         alignItems: 'center',
-        borderBottomWidth: 1,
-        borderBottomColor: 'gray',
+        marginBottom: 1,
         flexDirection: 'row',
     },
     postContainer: {
         backgroundColor: 'black',
         width: '100%',
         height: 130,
-        borderBottomWidth: 2,
-        borderBottomColor: 'gray',
+        marginBottom: 1,
         flexDirection: 'row',
-        justifyContent: 'space-evenly',
-        alignItems: 'center',
+        justifyContent: 'space-between',
     },
     icon: {
-        width: 50,
-        height: 50,
+        width: '12%',
+        height: '40%',
         borderRadius: 25,
         backgroundColor: 'white',
         marginBottom: 30,
         justifyContent: 'center',
         alignItems: 'center',
+        marginTop: 5,
+    },
+    name: {
+        fontSize: 20,
+        fontWeight: 'bold',
+        color: 'white',
+        marginStart: 10,
+    },
+    user: {
+      fontSize: 15,
+      color: 'gray',
+      marginStart: 10,
+      marginTop: 4,
     },
     body: {
         color: 'white',
         fontSize: 20,
-        padding: 10,
-        marginRight: 20,
+        width: '80%',
+        marginStart: 10,
     },
     inter: {
         flexDirection: 'row',
-        justifyContent: 'space-between',
+        justifyContent: 'space-around',
         marginRight: 50,
-        marginLeft: 10,
-    },
-    like: {
-    },
-    comment: {
-
-    },
-    retweet: {
-
+        marginStart: -20,
+        marginTop: 15,
     },
 });
