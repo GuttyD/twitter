@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
-import { View, Text, StyleSheet, FlatList, SafeAreaView, TouchableOpacity, StatusBar, Image } from 'react-native';
+import { View, Text, StyleSheet, FlatList, SafeAreaView, TouchableOpacity, StatusBar, Image, KeyboardAvoidingView } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
-import { Ionicons, AntDesign } from '@expo/vector-icons';
+import { Feather, Ionicons, AntDesign, MaterialIcons } from '@expo/vector-icons';
 import Inter from '../components/inter';
 import Posts from '../components/posts';
 import Header from '../components/header';
 
-const Home = () => {
+const Home = ({route}) => {
   const navigation = useNavigation(); 
   
   return(
@@ -19,7 +19,7 @@ const Home = () => {
             renderItem={({ item }) => 
             <SafeAreaView style={styles.postContainer}>
 
-            <TouchableOpacity style={styles.iconBtn}>
+            <TouchableOpacity style={styles.iconBtn} onPress={() => navigation.navigate('Profile', item)}>
               <Image source={item.iconImage} style={styles.iconImage}/>
             </TouchableOpacity>
 
@@ -35,11 +35,13 @@ const Home = () => {
                 </View>
             </SafeAreaView>  
             }/>
+
+
         <TouchableOpacity style={styles.newtweetbtn}
-        onPress={() => navigation.navigate("TweetPage")}
-        >
-            <AntDesign name="plus" size={26} color="white" />
+        onPress={() => navigation.navigate("TweetPage")}>
+            <AntDesign name="plus" size={24} color="white" />
         </TouchableOpacity>
+
       </SafeAreaView>
  );
 }
@@ -92,17 +94,17 @@ const styles = StyleSheet.create({
       fontSize: 16,
       width: '80%',
       marginStart: 10,
-      marginTop: 5,
+      paddingBottom: '3%',
   },
   newtweetbtn: {
     width: 60,
     height: 60,
     borderRadius: 30,
     backgroundColor: '#1DA1F2',
-    position: 'absolute',
     alignItems: 'center',
     justifyContent: 'center',
-    marginLeft: 340,
+    position: 'absolute',
+    marginLeft: 350,
     marginTop: 650,
 },
 });

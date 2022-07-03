@@ -7,6 +7,7 @@ import Search from './src/pages/search';
 import Notification from './src/pages/notification';
 import Messages from './src/pages/messages';
 import QuoteTweet from './src/pages/quotetweet';
+import Profile from './src/pages/profile'
 
 const Stack = createNativeStackNavigator()
 
@@ -20,6 +21,7 @@ const Screen1 = () => {
         <Stack.Screen name="Home" component={Home}/>
         <Stack.Screen name="TweetPage" component={TweetPage}/>
         <Stack.Screen name="QuoteTweet" component={QuoteTweet}/>
+        <Stack.Screen name="Profile" component={Profile}/>
     </Stack.Navigator>
   )
 }

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { View, TouchableOpacity, StyleSheet, Modal } from 'react-native';
-import { AntDesign, Ionicons } from '@expo/vector-icons';
+import { Feather, AntDesign, Ionicons } from '@expo/vector-icons';
 import RetweetBtn from './retweetbtn';
 
 const Inter = () => {
@@ -22,7 +22,7 @@ const Inter = () => {
         </TouchableOpacity>
 
         <TouchableOpacity>
-            <Ionicons name="share-outline" size={20} color="gray" />
+            <Feather name="share-2" size={20} color="gray" />
         </TouchableOpacity>
 
     </View>
@@ -35,7 +35,6 @@ const styles = StyleSheet.create({
         justifyContent: 'space-around',
         marginRight: 50,
         marginStart: -20,
-        marginTop: '3%',
     },
 });
 
