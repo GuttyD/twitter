@@ -1,15 +1,17 @@
 import React from 'react';
 import { View, StyleSheet } from 'react-native';
 
-export function Shop() {
+const Messages = () => {
  return (
-   <View style={styles.shop} />
+   <View style={styles.mensagens} />
   );
 }
 
 const styles = StyleSheet.create({
-    shop: {
+    mensagens: {
         flex: 1,
-        backgroundColor: 'orange',
+        backgroundColor: 'yellow',
     },
 });
+
+export default Messages

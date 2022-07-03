@@ -1,7 +1,7 @@
 import React from 'react';
 import { View, StyleSheet } from 'react-native';
 
-export function Notification() {
+const Notification = () => {
  return (
    <View style={styles.notification} />
   );
@@ -13,3 +13,5 @@ const styles = StyleSheet.create({
         backgroundColor: 'purple',
     },
 });
+
+export default Notification
