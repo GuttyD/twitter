@@ -1,13 +1,14 @@
 import React from 'react'
 import { StyleSheet, Text, View } from 'react-native'
 import { createNativeStackNavigator } from '@react-navigation/native-stack'
-import Home from './src/pages/home';
-import TweetPage from './src/pages/tweetpage';
-import Search from './src/pages/search';
-import Notification from './src/pages/notification';
-import Messages from './src/pages/messages';
-import QuoteTweet from './src/pages/quotetweet';
-import Profile from './src/pages/profile'
+import Home from './src/screens/home';
+import TweetPage from './src/screens/tweetpage';
+import Search from './src/screens/search';
+import Notification from './src/screens/notification';
+import Messages from './src/screens/messages';
+import QuoteTweet from './src/screens/quotetweet';
+import Profile from './src/screens/profile';
+import Details from './src/screens/Details';
 
 const Stack = createNativeStackNavigator()
 
@@ -15,6 +16,7 @@ const Screen1 = () => {
   return (
     <Stack.Navigator
       screenOptions={{
+        initialRouteName:"Home",
         headerShown: false
       }}
     >
@@ -22,6 +24,7 @@ const Screen1 = () => {
         <Stack.Screen name="TweetPage" component={TweetPage}/>
         <Stack.Screen name="QuoteTweet" component={QuoteTweet}/>
         <Stack.Screen name="Profile" component={Profile}/>
+        <Stack.Screen name="Details" component={Details}/>
     </Stack.Navigator>
   )
 }

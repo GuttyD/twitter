@@ -32,6 +32,7 @@ const TweetPage = ({navigation}) => {
                     multiline={true}
                     numberOfLines={3}
                     autoFocus={true}
+                    textAlignVertical='top'
                     />
                 </View>
 
@@ -44,15 +45,19 @@ const TweetPage = ({navigation}) => {
                         <Ionicons name="camera-outline" size={32} color="#1DA1F2" />
                     </View>
 
-                    <View style={{width: 100, height: 100, borderRadius: 10, backgroundColor: 'white', marginHorizontal: 5}}/>
-                    <View style={{width: 100, height: 100, borderRadius: 10, backgroundColor: 'white', marginHorizontal: 5}}/>
-                    <View style={{width: 100, height: 100, borderRadius: 10, backgroundColor: 'white', marginHorizontal: 5}}/>
-                    <View style={{width: 100, height: 100, borderRadius: 10, backgroundColor: 'white', marginHorizontal: 5}}/>
-                    <View style={{width: 100, height: 100, borderRadius: 10, backgroundColor: 'white', marginHorizontal: 5}}/>
-                    <View style={{width: 100, height: 100, borderRadius: 10, backgroundColor: 'white', marginHorizontal: 5}}/>
-                    <View style={{width: 100, height: 100, borderRadius: 10, backgroundColor: 'white', marginHorizontal: 5}}/>
-                    <View style={{width: 100, height: 100, borderRadius: 10, backgroundColor: 'white', marginHorizontal: 5}}/>
-                    <View style={{width: 100, height: 100, borderRadius: 10, backgroundColor: 'white', marginHorizontal: 5}}/>
+                    <View style={styles.imageContainer}/>
+                    <View style={styles.imageContainer}/>
+                    <View style={styles.imageContainer}/>
+                    <View style={styles.imageContainer}/>
+                    <View style={styles.imageContainer}/>
+                    <View style={styles.imageContainer}/>
+                    <View style={styles.imageContainer}/>
+                    <View style={styles.imageContainer}/>
+                    <View style={styles.imageContainer}/>
+                    <View style={styles.imageContainer}/>
+                    <View style={styles.imageContainer}/>
+                    <View style={styles.imageContainer}/>
+                    <View style={styles.imageContainer}/>
 
                 </ScrollView>
 
@@ -104,8 +109,16 @@ const styles = StyleSheet.create({
         backgroundColor: 'black',
         color: 'white',
         fontSize: 20,
-        marginStart: 10,
+        marginTop: 15,
+        marginLeft: 10,
     },
+    imageContainer: {
+        width: 100,
+        height: 100,
+        borderRadius: 10,
+        backgroundColor: 'white',
+        marginHorizontal: 5,
+    }
 });
 
 export default TweetPage

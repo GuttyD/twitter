@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { View, Text, StyleSheet, FlatList, SafeAreaView, TouchableOpacity, StatusBar, Image, KeyboardAvoidingView } from 'react-native';
+import { View, Text, StyleSheet, FlatList, SafeAreaView, TouchableOpacity, StatusBar, Image, KeyboardAvoidingView, TouchableWithoutFeedback } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import { Feather, Ionicons, AntDesign, MaterialIcons } from '@expo/vector-icons';
 import Inter from '../components/inter';
@@ -23,7 +23,7 @@ const Home = ({route}) => {
               <Image source={item.iconImage} style={styles.iconImage}/>
             </TouchableOpacity>
 
-                <View style={{flexDirection: 'column', flexGrow: 1, flex: 1, marginTop: 10,}}>
+                <TouchableOpacity onPress={() => navigation.navigate('Details', item, item.accountName, item.accountUser, item.body, item.iconImage)} style={{flexDirection: 'column', flexGrow: 1, flex: 1, marginTop: 10,}}>
                   <View style={{flexDirection: 'row', width: '100%', height: 25}}>
                     <Text style={styles.name}>{item.accountName}</Text>
                     <Text style={styles.user}>{item.accountUser}</Text>
@@ -32,8 +32,8 @@ const Home = ({route}) => {
                     <Text style={styles.body}>{item.body}</Text>
 
                   <Inter/>    
-                </View>
-            </SafeAreaView>  
+                </TouchableOpacity>
+                </SafeAreaView>  
             }/>
 
 
